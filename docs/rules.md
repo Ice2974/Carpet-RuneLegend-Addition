@@ -8,5 +8,5 @@
 
 - 类型: `string`
 - 默认值: `vanilla`
-- 建议值: `vanilla`, `0.45`
+- 建议值: `vanilla`, `0.5`
 - 分类：`RL`, `FEATURE`

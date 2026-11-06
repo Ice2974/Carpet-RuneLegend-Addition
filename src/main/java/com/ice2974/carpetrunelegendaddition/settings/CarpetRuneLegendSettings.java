@@ -20,7 +20,7 @@ public final class CarpetRuneLegendSettings {
     // 自定义格挡击退强度：vanilla 表示遵循原版行为（不击退），数值为击退强度；
     // 行为实现见 com.ice2974.carpetrunelegendaddition.mixins.LivingEntityBlockingKnockbackMixin。
     @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE},
-            options = {CustomBlockingKnockbackStrength.VANILLA, "0.45"},
+            options = {CustomBlockingKnockbackStrength.VANILLA, "0.5"},
             strict = false,
             validators = CustomBlockingKnockbackStrength.StrengthValidator.class)
     public static String customBlockingKnockbackStrength = CustomBlockingKnockbackStrength.VANILLA;

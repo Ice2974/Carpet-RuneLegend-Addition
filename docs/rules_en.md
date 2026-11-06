@@ -8,5 +8,5 @@ Custom knockback strength applied to the attacker after an item blocks a melee a
 
 - Type: `string`
 - Default: `vanilla`
-- Suggested values: `vanilla`, `0.45`
+- Suggested values: `vanilla`, `0.5`
 - Categories: `RL`, `FEATURE`
