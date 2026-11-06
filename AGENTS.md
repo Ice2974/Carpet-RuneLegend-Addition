@@ -77,6 +77,24 @@
 - 只有任务明确要求时才新增规则；新增规则不得实现未声明的行为。占位规则只允许“注册但不读取”，不得在其他代码中读取并执行行为。
 - 不要在 `onGameStarted()` 之外的时机解析规则类，也不要重复解析同一规则类。
 
+## 规则 / 命令 修改
+
+新增或调整功能时，按类型同步检查：
+
+| 类型 | 至少检查 | 必须同步文档 |
+| - | - | - |
+| 规则 | 规则定义类、翻译提供类、中英文语言文件、相关 Mixin / Helper / 配置类、入口类（根 src 注册宏边界）、canonical registry 的 membership / predicate / precedence、受影响平台 override | `docs/rules.md`、`docs/rules_en.md` |
+| 命令 | 命令注册入口、命令实现类、权限判断与对应规则类（COMMAND 分类）、命令树刷新逻辑、翻译提供类、中英文语言文件、受影响平台 override 入口类（各平台 `CarpetIceAdditionMod`）、反馈/错误文本、配置持久化逻辑 | `docs/commands.md`、`docs/commands_en.md` |
+
+约定：
+
+- 中文规则名使用 `.name`；中英文规则介绍使用 `.desc`；英文规则名默认直接显示内部名，不额外新增英文 `.name`。
+- 游戏内规则介绍（`.desc`）句末不带句号；`docs/` 文档中的规则介绍句末需要句号。
+- 规则文档中的规则介绍需要与游戏内规则介绍保持一致（文档内的注解不需要同步）。
+- 规则文档（`docs/rules.md` 与 `docs/rules_en.md`）中的规则条目顺序统一按照规则内部名（英文 camelCase 标识符，如 `beaconIgnoresObstruction`）的字母升序排列，不要按中文拼音或汉字笔画排序。
+- 第三方工具、许可证、设计灵感与致谢集中在 `THIRD_PARTY_NOTICES.md`（及 `README*.md` 致谢）统一维护；`docs/` 规则与命令文档保持纯粹的功能说明，不混杂第三方来源声明。新增或调整带有第三方来源的功能时，直接维护 `THIRD_PARTY_NOTICES.md`。
+- 命令文档顶部应包含 `命令列表` / `Command List`，新增或调整命令时同时更新列表和对应命令详情。
+
 ## 语言与玩家可见文本
 
 - 规则注册在 Carpet 自带 SettingsManager 中，因此翻译键前缀为 `carpet.`：
