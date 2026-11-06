@@ -1,0 +1,5 @@
+{
+  "carpet.category.RL_FEATURE": "RL FEATURE",
+  "carpet.rule.bedrockBlocking.name": "基岩版格挡",
+  "carpet.rule.bedrockBlocking.desc": "引入基岩版在格挡近战攻击后将攻击者朝反方向击退约1方块远的机制"
+}
