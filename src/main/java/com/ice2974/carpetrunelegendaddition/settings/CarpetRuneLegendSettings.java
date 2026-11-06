@@ -13,7 +13,8 @@ public final class CarpetRuneLegendSettings {
     private CarpetRuneLegendSettings() {
     }
 
-    // 占位规则：仅注册，没有任何代码读取该值。
+    // 基岩版格挡：开启后物品成功格挡近战攻击时击退攻击者；行为实现见
+    // com.ice2974.carpetrunelegendaddition.mixins.LivingEntityBedrockBlockingMixin。
     @Rule(categories = {RL, RuleCategory.FEATURE})
     public static boolean bedrockBlocking = false;
 }

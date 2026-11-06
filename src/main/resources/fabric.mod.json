@@ -22,6 +22,9 @@
       "com.ice2974.carpetrunelegendaddition.CarpetRuneLegendAdditionMod"
     ]
   },
+  "mixins": [
+    "carpet-runelegend-addition.mixins.json"
+  ],
   "depends": {
     "fabricloader": ">=0.20.1",
     "minecraft": ">=26.3",

@@ -2,7 +2,8 @@
 
 **中文** | [English](README_en.md)
 
-面向 RuneLegend 游戏玩法的**独立** Carpet 扩展模组。\
+这是一个面向 RuneLegend 游戏玩法的**独立** Carpet 扩展模组。
+
 它主要通过 Carpet 规则系统调整 Minecraft 原版机制，目标是让原版 Minecraft 的游戏行为尽可能接近 EaseCation 官方版圣符传说，并为地图开发者提供方便的规则配置能力。
 
 ## 依赖
