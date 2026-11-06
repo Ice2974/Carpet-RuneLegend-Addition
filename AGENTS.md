@@ -47,7 +47,7 @@
 | Maven Group | `com.ice2974` |
 | 主入口类 | `com.ice2974.carpetrunelegendaddition.CarpetRuneLegendAdditionMod` |
 | 规则定义类 | `com.ice2974.carpetrunelegendaddition.settings.CarpetRuneLegendSettings` |
-| 规则分类内部名 | `RL`（本模组专属分类，翻译键 `carpet.category.RL`）+ Carpet 内置 `feature`（`carpet.api.settings.RuleCategory.FEATURE`，显示值由 Carpet 自带语言文件提供：英文 `feature`、中文 `特性`） |
+| 规则分类内部名 | `RuneLegend`（本模组专属分类内部名，翻译键 `carpet.category.RuneLegend`，显示值固定为 `RL`）+ Carpet 内置 `feature`（`carpet.api.settings.RuleCategory.FEATURE`，显示值由 Carpet 自带语言文件提供：英文 `feature`、中文 `特性`） |
 | 资源 namespace | `carpet-runelegend-addition`（assets 路径 `assets/carpet-runelegend-addition/`） |
 | Mixin package（仅在引入 Mixin 后使用） | `com.ice2974.carpetrunelegendaddition.mixins` |
 | GitHub 仓库 | `Ice2974/Carpet-RuneLegend-Addition` |
@@ -56,7 +56,7 @@
 
 - `gradle.properties` 中的 `mod_id`、`mod_name`、`maven_group`、`archives_base_name` 是上述标识的单一来源；修改时必须同步 `fabric.mod.json`、Java 常量、语言文件与 README。
 - `CarpetRuneLegendAdditionMod` 中的 `MOD_ID` / `MOD_NAME` 常量必须与 `gradle.properties` 保持一致。
-- 规则分类按两个相互独立的分类登记：本模组专属分类 `RL`（内部名与语言文件键 `carpet.category.RL` 绑定）与 Carpet 内置分类 `feature`（`carpet.api.settings.RuleCategory.FEATURE`，显示值由 Carpet 自带语言文件提供，不要自建或覆盖其翻译键）；不要把两者拼成 `RL FEATURE` 之类的单一分类字符串。分类内部名不得包含空格，因为 Carpet 的 `/carpet list <tag>` 使用单个 word 参数。
+- 规则分类按两个相互独立的分类登记：本模组专属分类内部名 `RuneLegend`（语言文件键 `carpet.category.RuneLegend`，显示值固定为 `RL`，不要改成内部名以为的显示串）与 Carpet 内置分类 `feature`（`carpet.api.settings.RuleCategory.FEATURE`，显示值由 Carpet 自带语言文件提供，不要自建或覆盖其翻译键）；不要把两者拼成 `RL FEATURE` 之类的单一分类字符串。分类内部名不得包含空格，因为 Carpet 的 `/carpet list <tag>` 使用单个 word 参数；也不得使用 `RL` 这类过短的缩写，因为 Carpet 会按 tag 对规则内部名做子串匹配，过短分类名会把其他规则一并匹配进来。
 - 规则内部名（如 `bedrockBlocking`）是长期稳定标识，不得为了“更好听”而重命名；新增规则使用 lowerCamelCase。
 
 ## 构建配置与依赖
@@ -73,7 +73,7 @@
 - 扩展注册：`CarpetRuneLegendAdditionMod` 实现 `ModInitializer` + `CarpetExtension`；`onInitialize()` 中调用 `CarpetServer.manageExtension(...)`，`onGameStarted()` 中调用 `CarpetServer.settingsManager.parseSettingsClass(...)` 将规则注册进 Carpet 原生 SettingsManager。不要改成静态代码块注册、Mixin 注册或自建管理器。
 - 规则定义使用 `carpet.api.settings.Rule`；规则字段为 `public static`，默认值即为初始值。Boolean 规则由 Carpet 自动提供 `true` / `false` 选项；需要枚举/字符串选项时使用 `options`，需要严格校验时使用 `strict`。
 - 参数校验优先使用 Carpet 原生 `carpet.api.settings.Validator` / `Validators`；规则变更监听优先使用 `CarpetServer.settingsManager.registerRuleObserver(...)`。不要为单条规则另写框架。
-- 规则分类使用本模组常量 `RL` 与 `carpet.api.settings.RuleCategory.FEATURE` 组合；不要为了方便直接写魔法字符串，也不要把两个独立分类合并成一个字符串。
+- 规则分类使用本模组常量 `RUNELEGEND`（值 `RuneLegend`）与 `carpet.api.settings.RuleCategory.FEATURE` 组合；不要为了方便直接写魔法字符串，也不要把两个独立分类合并成一个字符串。
 - 只有任务明确要求时才新增规则；新增规则不得实现未声明的行为。占位规则只允许“注册但不读取”，不得在其他代码中读取并执行行为。
 - 不要在 `onGameStarted()` 之外的时机解析规则类，也不要重复解析同一规则类。
 
@@ -100,7 +100,7 @@
 - 规则注册在 Carpet 自带 SettingsManager 中，因此翻译键前缀为 `carpet.`：
   - 规则显示名：`carpet.rule.<ruleName>.name`（中文建议提供；英文可省略，Carpet 会回退显示内部名）。
   - 规则描述：`carpet.rule.<ruleName>.desc`（**必需**：非 legacy 规则缺少描述翻译键会导致服务端启动时报错）。
-  - 分类显示名：本模组分类 `carpet.category.RL`；Carpet 内置 `feature` 分类的显示值（en `feature` / zh `特性`）由 Carpet 自带语言文件提供，不要重复定义或覆盖。
+  - 分类显示名：本模组分类 `carpet.category.RuneLegend`；Carpet 内置 `feature` 分类的显示值（en `feature` / zh `特性`）由 Carpet 自带语言文件提供，不要重复定义或覆盖。
 - 语言文件是翻译的单一来源：`canHasTranslations(lang)` 直接通过 `carpet.utils.Translations.getTranslationFromResourcePath("assets/" + MOD_ID + "/lang/" + lang + ".json")` 返回；不要额外维护重复的 Java 翻译 Map。
 - 游戏内规则描述（`.desc`）句末不带句号；README / 文档中的描述句末需要句号。
 - JSON 文件必须为 UTF-8、无 BOM、可被解析；中文可以使用字面 UTF-8 或 `\uXXXX` 转义，但解析结果必须与需求文本完全一致。

@@ -1,10 +1,12 @@
 ## 规则
 
-### 基岩版格挡（bedrockBlocking）
+### 自定义格挡击退强度（customBlockingKnockbackStrength）
 
-引入基岩版在格挡近战攻击后将攻击者朝反方向击退约1方块远的机制。
+自定义物品格挡近战攻击后对攻击者的击退强度。
 
-- 类型: `boolean`
-- 默认值: `false`
-- 可选值: `false`, `true`
+> `vanilla`: 遵循原版行为，不产生击退
+
+- 类型: `string`
+- 默认值: `vanilla`
+- 建议值: `vanilla`, `0.45`
 - 分类：`RL`, `FEATURE`

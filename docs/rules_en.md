@@ -1,10 +1,12 @@
 ## Rules
 
-### Bedrock Blocking (bedrockBlocking)
+### customBlockingKnockbackStrength
 
-Introduces the Bedrock Edition mechanic that knocks the attacker roughly one block backwards after blocking a melee attack.
+Custom knockback strength applied to the attacker after an item blocks a melee attack.
 
-- Type: `boolean`
-- Default: `false`
-- Possible values: `false`, `true`
+> `vanilla`: follows vanilla behavior and applies no knockback
+
+- Type: `string`
+- Default: `vanilla`
+- Suggested values: `vanilla`, `0.45`
 - Categories: `RL`, `FEATURE`

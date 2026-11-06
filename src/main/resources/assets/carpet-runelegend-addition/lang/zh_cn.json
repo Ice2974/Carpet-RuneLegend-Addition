@@ -1,5 +1,5 @@
 {
-  "carpet.category.RL": "RL",
-  "carpet.rule.bedrockBlocking.name": "基岩版格挡",
-  "carpet.rule.bedrockBlocking.desc": "引入基岩版在格挡近战攻击后将攻击者朝反方向击退约1方块远的机制"
+  "carpet.category.RuneLegend": "RL",
+  "carpet.rule.customBlockingKnockbackStrength.name": "自定义格挡击退强度",
+  "carpet.rule.customBlockingKnockbackStrength.desc": "自定义物品格挡近战攻击后对攻击者的击退强度"
 }
