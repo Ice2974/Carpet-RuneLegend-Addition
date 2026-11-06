@@ -2,7 +2,7 @@
 
 面向 RuneLegend 游戏玩法的**独立** Carpet 扩展模组。它主要通过 Carpet 规则系统调整 Minecraft 原版机制，目标是让原版 Minecraft 的游戏行为尽可能接近 EaseCation 官方版圣符传说，并为地图开发者提供方便的规则配置能力。
 
-> **本模组不依赖 RuneLegend Core。** 工程中没有 RuneLegend Core 的 Gradle 依赖或 Fabric 模组依赖，不导入、不调用 RuneLegend Core 的任何类或 API，也不要求安装 RuneLegend Core。本模组只依赖 Fabric Loader、Fabric API 与 Fabric Carpet 等必要基础组件，可以独立安装、启动和运行。
+> **本模组不依赖 RuneLegend Core。**
 
 ## 当前阶段
 
@@ -64,7 +64,7 @@ Carpet-RuneLegend-Addition/
 | 项目名称 | `Carpet RuneLegend Addition` |
 | Java 包名 | `com.ice2974.carpetrunelegendaddition` |
 | Maven Group | `com.ice2974` |
-| 规则分类内部名 | `RL_FEATURE`（显示名 `RL FEATURE`） |
+| 规则分类内部名 | 本模组分类 `RL`（翻译键 `carpet.category.RL`）+ Carpet 内置分类 `feature`（`RuleCategory.FEATURE`） |
 | 语言文件命名空间 | `assets/carpet-runelegend-addition/` |
 
 ## 构建
@@ -95,17 +95,18 @@ $env:JAVA_HOME = 'C:\path\to\jdk-25'
 
 | 内部名 | 显示名（中文） | 类型 | 默认值 | 分类 | 状态 |
 | --- | --- | --- | --- | --- | --- |
-| `bedrockBlocking` | 基岩版格挡 | Boolean | `false` | `RL FEATURE` | 占位规则，仅注册，无实际功能 |
+| `bedrockBlocking` | 基岩版格挡 | Boolean | `false` | `RL`、`FEATURE`（Carpet 内置） | 占位规则，仅注册，无实际功能 |
 
 - 规则通过 `CarpetServer.settingsManager.parseSettingsClass(...)` 注册到 **Carpet 原生 SettingsManager**，因此复用 Carpet 原生的 `/carpet` 命令、规则列表、参数校验与规则监听机制，没有自定义命令或规则引擎。
-- 分类内部名为 `RL_FEATURE`（Carpet 分类在命令中作为单个 word 参数使用，不能包含空格）；界面显示值来自语言文件键 `carpet.category.RL_FEATURE`，即 `RL FEATURE`。
+- 规则同时登记到两个**相互独立**的分类：本模组专属分类 `RL`（内部名 `RL`，显示值来自语言文件键 `carpet.category.RL`）与 Carpet 内置分类 `FEATURE`（`carpet.api.settings.RuleCategory.FEATURE`，显示值由 Carpet 自带语言文件提供：英文 `feature`、中文 `特性`）。不要把两者拼成单一分类字符串；分类内部名也不能包含空格，因为 Carpet 的 `/carpet list <tag>` 使用单个 word 参数。
 - 规则翻译键由 Carpet 按 `<settingsManager identifier>.rule.<ruleName>.<name|desc>` 解析，本工程注册进 Carpet 自带管理器，因此键前缀为 `carpet.`。
 
 ### 查询与修改（Carpet 原生命令）
 
 ```text
 /carpet bedrockBlocking                  # 查看规则菜单：名称、描述、分类、当前值、可选值
-/carpet list RL_FEATURE                  # 按分类列出规则
+/carpet list RL                          # 按本模组分类列出规则
+/carpet list feature                     # 按 Carpet 内置特性分类列出规则
 /carpet list                             # 列出所有已修改（非默认）规则
 /carpet bedrockBlocking true             # 修改规则（仅当前会话生效）
 /carpet setDefault bedrockBlocking true  # 修改规则并写入存档，持久化
@@ -134,9 +135,9 @@ Carpet 的规则值**不是**每次都写盘，机制如下：
 | 类 / 文件 | 职责 |
 | --- | --- |
 | `CarpetRuneLegendAdditionMod` | Fabric `ModInitializer` 主入口，同时实现 `CarpetExtension`；`onInitialize()` 读取模组版本并调用 `CarpetServer.manageExtension(...)` 注册扩展；`onGameStarted()` 把规则类交给 Carpet 原生 `SettingsManager` 解析；`canHasTranslations()` 直接从本模组语言文件返回翻译表 |
-| `CarpetRuneLegendSettings` | 规则定义类：分类常量 `RL_FEATURE` 与 `@Rule` 标注的静态字段；本轮只有 `bedrockBlocking` 占位规则 |
+| `CarpetRuneLegendSettings` | 规则定义类：本模组分类常量 `RL`、`@Rule` 标注的静态字段；本轮只有 `bedrockBlocking` 占位规则（分类为 `RL` + Carpet 内置 `RuleCategory.FEATURE`） |
 | `fabric.mod.json` | Fabric 元数据：Mod ID、版本占位符、主入口点、`depends`（fabricloader / minecraft / java / fabric-api / carpet） |
-| `lang/zh_cn.json`、`lang/en_us.json` | Carpet 规则翻译：`carpet.rule.bedrockBlocking.name/.desc` 与 `carpet.category.RL_FEATURE`；语言文件是翻译的唯一来源 |
+| `lang/zh_cn.json`、`lang/en_us.json` | Carpet 规则翻译：`carpet.rule.bedrockBlocking.name/.desc` 与本模组分类 `carpet.category.RL`；语言文件是翻译的唯一来源（Carpet 内置 `feature` 分类显示值由 Carpet 自带语言文件提供） |
 
 ## 后续扩展建议
 
@@ -156,11 +157,11 @@ $env:JAVA_HOME = 'D:\DevTools\Java\JDK25'
 ```
 
 - 结果：`BUILD SUCCESSFUL`（Gradle 9.8.2 / Fabric Loom 1.19.3 / JDK 25.0.5），无错误、无弃用告警。
-- 产物：
-  - `carpet-runelegend-addition-0.1.0.jar`，4,982 B，SHA256 `17158736E6FB12DC481031AAE91757B19E0C5DE58ECA7E71643481D351D30CB2`
-  - `carpet-runelegend-addition-0.1.0-sources.jar`，3,679 B，SHA256 `606DCC35C49BFD82FC651FE548126023C9A4844864A312128FA11E66BAA86FC1`
-- 连续多次 `clean build` 产物字节一致（可复现）。
-- Jar 内容审计：`fabric.mod.json`（`${version}` 已展开为 `0.1.0`）、2 个模组类、`zh_cn.json` / `en_us.json`；**无任何 Mixin 配置**；无 RuneLegend Core 类或字符串。
+- 产物（分类语义修正后重新构建）：
+  - `carpet-runelegend-addition-0.1.0.jar`，4,962 B，SHA256 `1B5BE5BC9B5B728EA448411B9A7B0DB79F28745635B778EF334DE206C4E8C49E`
+  - `carpet-runelegend-addition-0.1.0-sources.jar`，3,850 B，SHA256 `E78999932E28062900D9D877BD8B227767918F4595222431F2DAE8CFE31EAD6A`
+- 连续两次 `clean build` 产物字节一致（可复现）。
+- Jar 内容审计：`fabric.mod.json`（`${version}` 已展开为 `0.1.0`）、2 个模组类、`zh_cn.json` / `en_us.json`；**无任何 Mixin 配置**；无 RuneLegend Core 类或字符串；语言文件中只有 `carpet.category.RL`，无 `RL_FEATURE` 残留。
 - 依赖审计：`compileClasspath` / `runtimeClasspath` 仅包含 Minecraft 26.3、fabric-loader 0.20.1、fabric-api 0.165.2+26.3、carpet 26.3（及 Fabric 子模块与原生库），**无 RuneLegend Core 依赖**。
 
 ### 独立专用服务器端到端验证
@@ -171,17 +172,20 @@ $env:JAVA_HOME = 'D:\DevTools\Java\JDK25'
 | --- | --- |
 | 模组加载 | 服务端日志 `Loading 44 mods:` 包含 `- carpet-runelegend-addition 0.1.0`、`- carpet 26.3+v260915`、`- fabric-api 0.165.2+26.3`；无 ERROR/Exception |
 | Carpet 识别扩展 | `bedrockBlocking` 出现在 Carpet 规则列表、规则菜单与分类中 |
-| 中文显示（`carpet language zh_cn`） | `基岩版格挡 (bedrockBlocking)`；描述 `引入基岩版在格挡近战攻击后将攻击者朝反方向击退约1方块远的机制`；`分类: [RL FEATURE]`；`当前值: false (default value)`；`Options: [ true false ]` |
-| 分类查询 | `carpet list RL_FEATURE` → `- 基岩版格挡 (bedrockBlocking) [true] [false]` |
+| 中文显示（`carpet language zh_cn`） | `基岩版格挡 (bedrockBlocking)`；描述 `引入基岩版在格挡近战攻击后将攻击者朝反方向击退约1方块远的机制`；`分类: [RL], [特性]`（两个独立分类标签）；`当前值: false (default value)`；`Options: [ true false ]` |
+| 分类查询 | `carpet list RL` → `- 基岩版格挡 (bedrockBlocking) [true] [false]`；`carpet list feature` → 同样列出本规则（并与 Carpet 内置 `feature` 规则一起显示） |
+| 分类栏 | Carpet 根列表分类栏同时出现 `[特性]` 与 `[RL]` 两个独立分类，无旧的合并标签 |
 | 规则修改 | `carpet bedrockBlocking true` → 重新查询为 `true (modified value)` |
 | 普通修改持久化 | 重启后回到 `false (default value)`；`world/carpet.conf` 不存在 → 普通修改仅当前会话有效 |
 | `setDefault` 持久化 | 立即写入 `world/carpet.conf`（内容 `bedrockBlocking true`）；重启日志 `[CM] Loaded 1 settings from carpet.conf`，查询为 `true (modified value)` |
 | `removeDefault` | 清空 conf 条目，重启后回到 `false (default value)` |
-| 英文回退（`carpet language en_us`） | 显示名回退为 `bedrockBlocking`，英文描述与 `[RL FEATURE]` 正确 |
+| 英文回退（`carpet language en_us`） | 显示名回退为 `bedrockBlocking`，英文描述与 `Tags: [RL], [feature]` 正确 |
 | RuneLegend Core 独立性 | 服务器从未安装 RuneLegend Core，日志中无其加载记录或错误 |
 | 行为安全 | 无 Mixin、无事件监听、无代码读取该规则；静态检查确认 jar 中只有该规则字段定义，没有使用者 |
 
-服务器测试的全部原始日志、命令用例与状态快照保留在本地 `.verify/logs/`（`EVIDENCE.md` 为索引）；验证结束后所有测试服务器均已通过控制台 `stop` 正常关闭。
+> 备注：`carpet list RL` 可能额外列出名字含 `rl` 子串的 Carpet 原生规则（如 `pingPlayerListLimit`、`railPowerLimit`）。这是 Carpet 原生的分类查询匹配语义（规则名小写子串、分类精确匹配、描述分词匹配三者取并集），不是本模组的问题；验收以"本规则被正确列出"为准。
+
+服务器测试的全部原始日志、命令用例与状态快照保留在本地 `.verify/logs/`（`EVIDENCE.md` 为索引，含分类语义修正后的复验记录 `r1_*.log`）；验证结束后所有测试服务器均已通过控制台 `stop` 正常关闭。
 
 ## 许可证
 
