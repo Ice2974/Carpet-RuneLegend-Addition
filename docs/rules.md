@@ -1,5 +1,14 @@
 ## 规则
 
+### 始终触发横扫（alwaysSweepAttack）
+
+主手持有剑时，攻击成功必定触发横扫攻击，无视攻击冷却、暴击判定、疾跑状态、着地状态与移动速度限制。
+
+- 类型: `boolean`
+- 默认值: `false`
+- 可选值: `false`, `true`
+- 分类：`RL`, `FEATURE`
+
 ### 自定义格挡击退强度（customBlockingKnockbackStrength）
 
 自定义物品格挡近战攻击后对攻击者的击退强度。

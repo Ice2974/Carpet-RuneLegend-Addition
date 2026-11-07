@@ -1,4 +1,5 @@
 {
   "carpet.category.RuneLegend": "RL",
+  "carpet.rule.alwaysSweepAttack.desc": "Always triggers a sweep attack when an attack with a sword in the main hand succeeds, ignoring attack cooldown, critical-hit checks, sprinting, grounded state, and movement speed limits",
   "carpet.rule.customBlockingKnockbackStrength.desc": "Custom knockback strength applied to the attacker after an item blocks a melee attack"
 }

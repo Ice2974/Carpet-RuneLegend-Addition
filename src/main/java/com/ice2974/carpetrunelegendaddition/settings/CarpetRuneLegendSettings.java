@@ -24,4 +24,9 @@ public final class CarpetRuneLegendSettings {
             strict = false,
             validators = CustomBlockingKnockbackStrength.StrengthValidator.class)
     public static String customBlockingKnockbackStrength = CustomBlockingKnockbackStrength.VANILLA;
+
+    // 持剑攻击成功时无视攻击冷却、暴击、疾跑、着地与移动速度条件触发横扫；
+    // 行为实现见 com.ice2974.carpetrunelegendaddition.mixins.PlayerAlwaysSweepAttackMixin。
+    @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE})
+    public static boolean alwaysSweepAttack = false;
 }

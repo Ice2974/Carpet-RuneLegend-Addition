@@ -3,7 +3,8 @@
   "package": "com.ice2974.carpetrunelegendaddition.mixins",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
-    "LivingEntityBlockingKnockbackMixin"
+    "LivingEntityBlockingKnockbackMixin",
+    "PlayerAlwaysSweepAttackMixin"
   ],
   "injectors": {
     "defaultRequire": 1
