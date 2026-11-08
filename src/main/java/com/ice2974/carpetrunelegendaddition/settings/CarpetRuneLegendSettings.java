@@ -35,4 +35,10 @@ public final class CarpetRuneLegendSettings {
     // com.ice2974.carpetrunelegendaddition.mixins.EvokerNoVexSummonMixin。
     @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE})
     public static boolean evokerNeverSummonVex = false;
+
+    // 女巫永不使用瞬伤药水：在实际选中瞬间伤害药水时跳过本次投掷（不生成药水实体、不播投掷音效），
+    // 而不是让已经投出的药水失效；行为实现见
+    // com.ice2974.carpetrunelegendaddition.mixins.WitchNoHarmingPotionMixin。
+    @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE})
+    public static boolean witchNeverUseHarmingPotion = false;
 }

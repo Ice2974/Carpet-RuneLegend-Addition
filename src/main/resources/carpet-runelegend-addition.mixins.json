@@ -5,7 +5,8 @@
   "mixins": [
     "EvokerNoVexSummonMixin",
     "LivingEntityBlockingKnockbackMixin",
-    "PlayerAlwaysSweepAttackMixin"
+    "PlayerAlwaysSweepAttackMixin",
+    "WitchNoHarmingPotionMixin"
   ],
   "injectors": {
     "defaultRequire": 1

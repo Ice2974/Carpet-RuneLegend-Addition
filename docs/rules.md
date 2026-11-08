@@ -28,3 +28,12 @@
 - 默认值: `false`
 - 可选值: `false`, `true`
 - 分类：`RL`, `FEATURE`
+
+### 女巫永不使用瞬伤药水（witchNeverUseHarmingPotion）
+
+女巫不再尝试投掷瞬伤药水：原版会选择瞬伤药水的场合不再投掷药水，治疗、再生、缓慢、中毒、虚弱等其他药水选择不受影响。
+
+- 类型: `boolean`
+- 默认值: `false`
+- 可选值: `false`, `true`
+- 分类：`RL`, `FEATURE`

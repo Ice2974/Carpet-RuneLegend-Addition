@@ -28,3 +28,12 @@ Evokers never attempt to summon vexes: they never start the summoning spell (no 
 - Default: `false`
 - Suggested values: `false`, `true`
 - Categories: `RL`, `FEATURE`
+
+### witchNeverUseHarmingPotion
+
+Witches never attempt to use potions of harming: when vanilla would choose a harming potion they skip the throw entirely; other potion choices are unaffected.
+
+- Type: `boolean`
+- Default: `false`
+- Suggested values: `false`, `true`
+- Categories: `RL`, `FEATURE`
