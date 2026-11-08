@@ -19,3 +19,12 @@ Custom knockback strength applied to the attacker after an item blocks a melee a
 - Default: `vanilla`
 - Suggested values: `vanilla`, `0.5`
 - Categories: `RL`, `FEATURE`
+
+### evokerNeverSummonVex
+
+Evokers never attempt to summon vexes: they never start the summoning spell (no cast warm-up or prepare sound); other spells such as evoker fangs are unaffected.
+
+- Type: `boolean`
+- Default: `false`
+- Suggested values: `false`, `true`
+- Categories: `RL`, `FEATURE`

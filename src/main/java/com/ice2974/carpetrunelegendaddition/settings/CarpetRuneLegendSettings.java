@@ -29,4 +29,10 @@ public final class CarpetRuneLegendSettings {
     // 行为实现见 com.ice2974.carpetrunelegendaddition.mixins.PlayerAlwaysSweepAttackMixin。
     @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE})
     public static boolean alwaysSweepAttack = false;
+
+    // 唤魔者永不召唤恼鬼：在法术选择阶段直接跳过召唤法术（无前摇、无准备音效、无施法动画），
+    // 而不是让已经开始的召唤失败；行为实现见
+    // com.ice2974.carpetrunelegendaddition.mixins.EvokerNoVexSummonMixin。
+    @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE})
+    public static boolean evokerNeverSummonVex = false;
 }

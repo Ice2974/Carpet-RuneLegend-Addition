@@ -19,3 +19,12 @@
 - 默认值: `vanilla`
 - 建议值: `vanilla`, `0.5`
 - 分类：`RL`, `FEATURE`
+
+### 唤魔者永不召唤恼鬼（evokerNeverSummonVex）
+
+唤魔者永不尝试召唤恼鬼，不会进入召唤施法前摇或播放准备音效；尖牙等其他法术不受影响。
+
+- 类型: `boolean`
+- 默认值: `false`
+- 可选值: `false`, `true`
+- 分类：`RL`, `FEATURE`
