@@ -5,7 +5,7 @@
   "carpet.rule.customBlockingKnockbackStrength.name": "自定义格挡击退强度",
   "carpet.rule.customBlockingKnockbackStrength.desc": "自定义物品格挡近战攻击后对攻击者的击退强度",
   "carpet.rule.evokerNeverSummonVex.name": "唤魔者永不召唤恼鬼",
-  "carpet.rule.evokerNeverSummonVex.desc": "唤魔者永不尝试召唤恼鬼，不会进入召唤施法前摇或播放准备音效；尖牙等其他法术不受影响",
+  "carpet.rule.evokerNeverSummonVex.desc": "唤魔者永不尝试召唤恼鬼",
   "carpet.rule.witchNeverUseHarmingPotion.name": "女巫永不使用瞬伤药水",
-  "carpet.rule.witchNeverUseHarmingPotion.desc": "女巫不再尝试投掷瞬伤药水：原版会选择瞬伤药水的场合不再投掷药水，治疗、再生、缓慢、中毒、虚弱等其他药水选择不受影响"
+  "carpet.rule.witchNeverUseHarmingPotion.desc": "女巫不再尝试投掷瞬伤药水"
 }

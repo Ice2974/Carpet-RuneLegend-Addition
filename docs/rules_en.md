@@ -22,7 +22,7 @@ Custom knockback strength applied to the attacker after an item blocks a melee a
 
 ### evokerNeverSummonVex
 
-Evokers never attempt to summon vexes: they never start the summoning spell (no cast warm-up or prepare sound); other spells such as evoker fangs are unaffected.
+Evokers never attempt to summon vexes.
 
 - Type: `boolean`
 - Default: `false`
@@ -31,7 +31,7 @@ Evokers never attempt to summon vexes: they never start the summoning spell (no 
 
 ### witchNeverUseHarmingPotion
 
-Witches never attempt to use potions of harming: when vanilla would choose a harming potion they skip the throw entirely; other potion choices are unaffected.
+Witches never attempt to use potions of harming.
 
 - Type: `boolean`
 - Default: `false`
