@@ -5,6 +5,7 @@
   "mixins": [
     "EvokerNoVexSummonMixin",
     "LivingEntityBlockingKnockbackMixin",
+    "LivingEntityPoisonImmunityMixin",
     "PlayerAlwaysSweepAttackMixin",
     "WitchNoHarmingPotionMixin"
   ],

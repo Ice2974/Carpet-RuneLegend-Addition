@@ -22,7 +22,16 @@ Custom knockback strength applied to the attacker after an item blocks a melee a
 
 ### evokerNeverSummonVex
 
-Evokers never attempt to summon vexes.
+Evokers will no longer attempt to summon vexes.
+
+- Type: `boolean`
+- Default: `false`
+- Suggested values: `false`, `true`
+- Categories: `RL`, `FEATURE`
+
+### undeadNotImmuneToPoison
+
+Undead mobs are no longer immune to poison effects and will take normal poison damage.
 
 - Type: `boolean`
 - Default: `false`
@@ -31,7 +40,7 @@ Evokers never attempt to summon vexes.
 
 ### witchNeverUseHarmingPotion
 
-Witches never attempt to use potions of harming.
+Witches will no longer attempt to throw instant damage potions.
 
 - Type: `boolean`
 - Default: `false`

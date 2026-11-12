@@ -22,7 +22,16 @@
 
 ### 唤魔者永不召唤恼鬼（evokerNeverSummonVex）
 
-唤魔者永不尝试召唤恼鬼。
+唤魔者不会再尝试召唤恼鬼。
+
+- 类型: `boolean`
+- 默认值: `false`
+- 可选值: `false`, `true`
+- 分类：`RL`, `FEATURE`
+
+### 亡灵生物不免疫中毒（undeadNotImmuneToPoison）
+
+亡灵生物不再免疫中毒效果，会正常受到中毒伤害。
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -31,7 +40,7 @@
 
 ### 女巫永不使用瞬伤药水（witchNeverUseHarmingPotion）
 
-女巫不再尝试投掷瞬伤药水。
+女巫不会再尝试投掷瞬间伤害药水。
 
 - 类型: `boolean`
 - 默认值: `false`

@@ -2,6 +2,7 @@
   "carpet.category.RuneLegend": "RL",
   "carpet.rule.alwaysSweepAttack.desc": "Always triggers a sweep attack when an attack with a sword in the main hand succeeds, ignoring attack cooldown, critical-hit checks, sprinting, grounded state, and movement speed limits",
   "carpet.rule.customBlockingKnockbackStrength.desc": "Custom knockback strength applied to the attacker after an item blocks a melee attack",
-  "carpet.rule.evokerNeverSummonVex.desc": "Evokers never attempt to summon vexes",
-  "carpet.rule.witchNeverUseHarmingPotion.desc": "Witches never attempt to use potions of harming"
+  "carpet.rule.evokerNeverSummonVex.desc": "Evokers will no longer attempt to summon vexes",
+  "carpet.rule.undeadNotImmuneToPoison.desc": "Undead mobs are no longer immune to poison effects and will take normal poison damage",
+  "carpet.rule.witchNeverUseHarmingPotion.desc": "Witches will no longer attempt to throw instant damage potions"
 }

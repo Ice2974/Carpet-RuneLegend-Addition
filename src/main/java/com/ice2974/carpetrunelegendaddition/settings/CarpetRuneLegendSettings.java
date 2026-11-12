@@ -41,4 +41,10 @@ public final class CarpetRuneLegendSettings {
     // com.ice2974.carpetrunelegendaddition.mixins.WitchNoHarmingPotionMixin。
     @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE})
     public static boolean witchNeverUseHarmingPotion = false;
+
+    // 亡灵生物不免疫中毒：位于 #minecraft:undead 的实体可以正常获得中毒效果，
+    // 生命恢复仍保持原版免疫；行为实现见
+    // com.ice2974.carpetrunelegendaddition.mixins.LivingEntityPoisonImmunityMixin。
+    @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE})
+    public static boolean undeadNotImmuneToPoison = false;
 }
