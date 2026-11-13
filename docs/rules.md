@@ -9,6 +9,15 @@
 - 可选值: `false`, `true`
 - 分类：`RL`, `FEATURE`
 
+### 便捷不死图腾（convenientTotemOfUndying）
+
+不死图腾在玩家背包的任意位置均可触发保护效果，潜影盒与末影箱中的物品除外。
+
+- 类型: `boolean`
+- 默认值: `false`
+- 可选值: `false`, `true`
+- 分类：`RL`, `FEATURE`
+
 ### 自定义格挡击退强度（customBlockingKnockbackStrength）
 
 自定义物品格挡近战攻击后对攻击者的击退强度。

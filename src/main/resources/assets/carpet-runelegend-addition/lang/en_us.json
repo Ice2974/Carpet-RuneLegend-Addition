@@ -1,6 +1,7 @@
 {
   "carpet.category.RuneLegend": "RL",
   "carpet.rule.alwaysSweepAttack.desc": "Always triggers a sweep attack when an attack with a sword in the main hand succeeds, ignoring attack cooldown, critical-hit checks, sprinting, grounded state, and movement speed limits",
+  "carpet.rule.convenientTotemOfUndying.desc": "Totems of Undying can trigger their protection from any slot of a player's inventory, excluding items stored inside shulker boxes or ender chests",
   "carpet.rule.customBlockingKnockbackStrength.desc": "Custom knockback strength applied to the attacker after an item blocks a melee attack",
   "carpet.rule.enhancedTotemOfUndying.desc": "Totems of Undying immediately restore an additional 10 health when triggered",
   "carpet.rule.evokerNeverSummonVex.desc": "Evokers will no longer attempt to summon vexes",

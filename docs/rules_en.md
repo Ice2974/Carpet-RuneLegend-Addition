@@ -9,6 +9,15 @@ Always triggers a sweep attack when an attack with a sword in the main hand succ
 - Suggested values: `false`, `true`
 - Categories: `RL`, `FEATURE`
 
+### convenientTotemOfUndying
+
+Totems of Undying can trigger their protection from any slot of a player's inventory, excluding items stored inside shulker boxes or ender chests.
+
+- Type: `boolean`
+- Default: `false`
+- Suggested values: `false`, `true`
+- Categories: `RL`, `FEATURE`
+
 ### customBlockingKnockbackStrength
 
 Custom knockback strength applied to the attacker after an item blocks a melee attack.

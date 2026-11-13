@@ -6,6 +6,7 @@
     "EvokerNoVexSummonMixin",
     "ItemStackTotemStackSizeMixin",
     "LivingEntityBlockingKnockbackMixin",
+    "LivingEntityConvenientTotemMixin",
     "LivingEntityEnhancedTotemMixin",
     "LivingEntityPoisonImmunityMixin",
     "PlayerAlwaysSweepAttackMixin",

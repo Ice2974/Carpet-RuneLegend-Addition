@@ -59,4 +59,10 @@ public final class CarpetRuneLegendSettings {
     // com.ice2974.carpetrunelegendaddition.mixins.LivingEntityEnhancedTotemMixin。
     @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE})
     public static boolean enhancedTotemOfUndying = false;
+
+    // 便捷不死图腾：玩家背包任意顶层栏位中的不死图腾都能触发死亡保护，
+    // 潜影盒与末影箱内的物品不计入；行为实现见
+    // com.ice2974.carpetrunelegendaddition.mixins.LivingEntityConvenientTotemMixin。
+    @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE})
+    public static boolean convenientTotemOfUndying = false;
 }
