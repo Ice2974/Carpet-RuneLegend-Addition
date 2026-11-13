@@ -6,6 +6,8 @@
   "carpet.rule.customBlockingKnockbackStrength.desc": "自定义物品格挡近战攻击后对攻击者的击退强度",
   "carpet.rule.evokerNeverSummonVex.name": "唤魔者永不召唤恼鬼",
   "carpet.rule.evokerNeverSummonVex.desc": "唤魔者不会再尝试召唤恼鬼",
+  "carpet.rule.stackableTotemOfUndying.name": "可堆叠不死图腾",
+  "carpet.rule.stackableTotemOfUndying.desc": "允许不死图腾物品堆叠到64个",
   "carpet.rule.undeadNotImmuneToPoison.name": "亡灵生物不免疫中毒",
   "carpet.rule.undeadNotImmuneToPoison.desc": "亡灵生物不再免疫中毒效果，会正常受到中毒伤害",
   "carpet.rule.witchNeverUseHarmingPotion.name": "女巫永不使用瞬伤药水",

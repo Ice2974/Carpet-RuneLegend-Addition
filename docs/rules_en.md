@@ -29,6 +29,15 @@ Evokers will no longer attempt to summon vexes.
 - Suggested values: `false`, `true`
 - Categories: `RL`, `FEATURE`
 
+### stackableTotemOfUndying
+
+Allows totems of undying to stack up to 64.
+
+- Type: `boolean`
+- Default: `false`
+- Suggested values: `false`, `true`
+- Categories: `RL`, `FEATURE`
+
 ### undeadNotImmuneToPoison
 
 Undead mobs are no longer immune to poison effects and will take normal poison damage.

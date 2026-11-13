@@ -47,4 +47,10 @@ public final class CarpetRuneLegendSettings {
     // com.ice2974.carpetrunelegendaddition.mixins.LivingEntityPoisonImmunityMixin。
     @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE})
     public static boolean undeadNotImmuneToPoison = false;
+
+    // 可堆叠不死图腾：规则开启时不死图腾最大堆叠数为 64，关闭时恢复原版 1；
+    // 行为实现见
+    // com.ice2974.carpetrunelegendaddition.mixins.ItemStackTotemStackSizeMixin。
+    @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE})
+    public static boolean stackableTotemOfUndying = false;
 }

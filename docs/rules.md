@@ -29,6 +29,15 @@
 - 可选值: `false`, `true`
 - 分类：`RL`, `FEATURE`
 
+### 可堆叠不死图腾（stackableTotemOfUndying）
+
+允许不死图腾物品堆叠到64个。
+
+- 类型: `boolean`
+- 默认值: `false`
+- 可选值: `false`, `true`
+- 分类：`RL`, `FEATURE`
+
 ### 亡灵生物不免疫中毒（undeadNotImmuneToPoison）
 
 亡灵生物不再免疫中毒效果，会正常受到中毒伤害。
