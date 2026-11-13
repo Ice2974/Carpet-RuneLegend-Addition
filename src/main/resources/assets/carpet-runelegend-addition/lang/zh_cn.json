@@ -4,6 +4,8 @@
   "carpet.rule.alwaysSweepAttack.desc": "主手持有剑时，攻击成功必定触发横扫攻击，无视攻击冷却、暴击判定、疾跑状态、着地状态与移动速度限制",
   "carpet.rule.customBlockingKnockbackStrength.name": "自定义格挡击退强度",
   "carpet.rule.customBlockingKnockbackStrength.desc": "自定义物品格挡近战攻击后对攻击者的击退强度",
+  "carpet.rule.enhancedTotemOfUndying.name": "强化不死图腾",
+  "carpet.rule.enhancedTotemOfUndying.desc": "不死图腾触发时立刻额外恢复 10 点生命值",
   "carpet.rule.evokerNeverSummonVex.name": "唤魔者永不召唤恼鬼",
   "carpet.rule.evokerNeverSummonVex.desc": "唤魔者不会再尝试召唤恼鬼",
   "carpet.rule.stackableTotemOfUndying.name": "可堆叠不死图腾",

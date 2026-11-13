@@ -53,4 +53,10 @@ public final class CarpetRuneLegendSettings {
     // com.ice2974.carpetrunelegendaddition.mixins.ItemStackTotemStackSizeMixin。
     @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE})
     public static boolean stackableTotemOfUndying = false;
+
+    // 强化不死图腾：不死图腾触发后，在原版将生命值设为 1 点的基础上额外恢复 10 点生命值；
+    // 20 点生命上限的玩家最终为 11 点，恢复量不超过最大生命值；行为实现见
+    // com.ice2974.carpetrunelegendaddition.mixins.LivingEntityEnhancedTotemMixin。
+    @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE})
+    public static boolean enhancedTotemOfUndying = false;
 }

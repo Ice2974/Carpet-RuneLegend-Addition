@@ -20,6 +20,15 @@ Custom knockback strength applied to the attacker after an item blocks a melee a
 - Suggested values: `vanilla`, `0.5`
 - Categories: `RL`, `FEATURE`
 
+### enhancedTotemOfUndying
+
+Totems of Undying immediately restore an additional 10 health when triggered.
+
+- Type: `boolean`
+- Default: `false`
+- Suggested values: `false`, `true`
+- Categories: `RL`, `FEATURE`
+
 ### evokerNeverSummonVex
 
 Evokers will no longer attempt to summon vexes.
