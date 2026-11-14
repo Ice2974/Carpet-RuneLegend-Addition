@@ -13,10 +13,10 @@ public final class WitherSkullDeflection {
             return false;
         }
         return switch (CarpetRuneLegendSettings.deflectableWitherSkulls) {
-            case OFF -> false;
-            case ALL -> true;
-            case BLACK -> !skull.isDangerous();
-            case BLUE -> skull.isDangerous();
+            case "true" -> true;
+            case "black" -> !skull.isDangerous();
+            case "blue" -> skull.isDangerous();
+            default -> false;
         };
     }
 }

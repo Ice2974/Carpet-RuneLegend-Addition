@@ -33,9 +33,11 @@
 
 玩家可以左键将指定颜色的凋灵头沿瞄准方向打回去。
 
-- 类型: `enum`
-- 默认值: `off`（保持原版行为）
-- 可选值: `off`、`all`（两种颜色）、`black`（仅黑色）、`blue`（仅蓝色）
+- 类型: `string`
+- 默认值: `false`（保持原版行为）
+- 可选值: `false`、`true`（两种颜色）、`black`（仅黑色）、`blue`（仅蓝色）
+
+若世界的 `carpet.conf` 仍使用旧值 `off` 或 `all`，请分别改为 `false` 或 `true`。
 - 分类：`RL`, `FEATURE`, `CLIENT`
 
 ### 强化不死图腾（enhancedTotemOfUndying）

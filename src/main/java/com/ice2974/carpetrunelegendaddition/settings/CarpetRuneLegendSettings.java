@@ -30,8 +30,9 @@ public final class CarpetRuneLegendSettings {
     @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE})
     public static boolean alwaysSweepAttack = false;
 
-    @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE, RuleCategory.CLIENT}, strict = true)
-    public static volatile WitherSkullDeflectionMode deflectableWitherSkulls = WitherSkullDeflectionMode.OFF;
+    @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE, RuleCategory.CLIENT},
+            options = {"false", "true", "black", "blue"}, strict = true)
+    public static volatile String deflectableWitherSkulls = "false";
 
     // 唤魔者永不召唤恼鬼：在法术选择阶段直接跳过召唤法术（无前摇、无准备音效、无施法动画），
     // 而不是让已经开始的召唤失败；行为实现见

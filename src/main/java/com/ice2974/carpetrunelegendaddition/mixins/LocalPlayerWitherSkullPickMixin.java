@@ -3,7 +3,6 @@ package com.ice2974.carpetrunelegendaddition.mixins;
 import carpet.network.CarpetClient;
 import com.ice2974.carpetrunelegendaddition.helpers.WitherSkullDeflection;
 import com.ice2974.carpetrunelegendaddition.settings.CarpetRuneLegendSettings;
-import com.ice2974.carpetrunelegendaddition.settings.WitherSkullDeflectionMode;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.world.entity.Entity;
@@ -23,7 +22,7 @@ abstract class LocalPlayerWitherSkullPickMixin {
                     + "D)Lnet/minecraft/world/phys/EntityHitResult;"),
             index = 4)
     private static Predicate<Entity> carpetRuneLegendAddition$pickWitherSkulls(Predicate<Entity> vanilla) {
-        if (CarpetRuneLegendSettings.deflectableWitherSkulls == WitherSkullDeflectionMode.OFF
+        if ("false".equals(CarpetRuneLegendSettings.deflectableWitherSkulls)
                 || (!Minecraft.getInstance().hasSingleplayerServer() && !CarpetClient.isCarpet())) {
             return vanilla;
         }

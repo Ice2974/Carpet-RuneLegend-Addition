@@ -33,9 +33,11 @@ Custom knockback strength applied to the attacker after an item blocks a melee a
 
 Players can left-click wither skulls of the selected colors to deflect them in the direction they are aiming.
 
-- Type: `enum`
-- Default: `off` (vanilla behavior)
-- Allowed values: `off`, `all` (both colors), `black` (black only), `blue` (blue only)
+- Type: `string`
+- Default: `false` (vanilla behavior)
+- Allowed values: `false`, `true` (both colors), `black` (black only), `blue` (blue only)
+
+If the world's `carpet.conf` still uses the old value `off` or `all`, replace it with `false` or `true`, respectively.
 - Categories: `RL`, `FEATURE`, `CLIENT`
 
 ### enhancedTotemOfUndying
