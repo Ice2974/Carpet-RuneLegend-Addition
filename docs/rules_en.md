@@ -29,6 +29,15 @@ Custom knockback strength applied to the attacker after an item blocks a melee a
 - Suggested values: `vanilla`, `0.5`
 - Categories: `RL`, `FEATURE`
 
+### deflectableWitherSkulls
+
+Players can left-click wither skulls of the selected colors to deflect them in the direction they are aiming.
+
+- Type: `enum`
+- Default: `off` (vanilla behavior)
+- Allowed values: `off`, `all` (both colors), `black` (black only), `blue` (blue only)
+- Categories: `RL`, `FEATURE`, `CLIENT`
+
 ### enhancedTotemOfUndying
 
 Totems of Undying immediately restore an additional 10 health when triggered.

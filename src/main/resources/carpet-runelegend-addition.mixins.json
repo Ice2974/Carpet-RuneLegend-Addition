@@ -9,8 +9,13 @@
     "LivingEntityConvenientTotemMixin",
     "LivingEntityEnhancedTotemMixin",
     "LivingEntityPoisonImmunityMixin",
+    "PiercingWeaponWitherSkullDeflectionMixin",
     "PlayerAlwaysSweepAttackMixin",
+    "PlayerWitherSkullDeflectionMixin",
     "WitchNoHarmingPotionMixin"
+  ],
+  "client": [
+    "LocalPlayerWitherSkullPickMixin"
   ],
   "injectors": {
     "defaultRequire": 1

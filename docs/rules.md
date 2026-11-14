@@ -29,6 +29,15 @@
 - 建议值: `vanilla`, `0.5`
 - 分类：`RL`, `FEATURE`
 
+### 可反弹凋灵头（deflectableWitherSkulls）
+
+玩家可以左键将指定颜色的凋灵头沿瞄准方向打回去。
+
+- 类型: `enum`
+- 默认值: `off`（保持原版行为）
+- 可选值: `off`、`all`（两种颜色）、`black`（仅黑色）、`blue`（仅蓝色）
+- 分类：`RL`, `FEATURE`, `CLIENT`
+
 ### 强化不死图腾（enhancedTotemOfUndying）
 
 不死图腾触发时立刻额外恢复 10 点生命值。
