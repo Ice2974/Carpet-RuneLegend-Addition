@@ -40,6 +40,15 @@
 若世界的 `carpet.conf` 仍使用旧值 `off` 或 `all`，请分别改为 `false` 或 `true`。
 - 分类：`RL`, `FEATURE`, `CLIENT`
 
+### 禁用饱食度消耗（disableFoodExhaustion）
+
+玩家不再因疾跑、跳跃、攻击、长矛突刺、自然恢复和饥饿效果消耗饱食度；指令等直接修改仍会改变饱食度，进食仍可正常恢复。
+
+- 类型: `boolean`
+- 默认值: `false`
+- 可选值: `false`, `true`
+- 分类：`RL`, `FEATURE`
+
 ### 强化不死图腾（enhancedTotemOfUndying）
 
 不死图腾触发时立刻额外恢复 10 点生命值。

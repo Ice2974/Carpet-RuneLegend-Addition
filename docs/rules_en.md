@@ -40,6 +40,15 @@ Players can left-click wither skulls of the selected colors to deflect them in t
 If the world's `carpet.conf` still uses the old value `off` or `all`, replace it with `false` or `true`, respectively.
 - Categories: `RL`, `FEATURE`, `CLIENT`
 
+### disableFoodExhaustion
+
+Hunger is no longer consumed by sprinting, jumping, attacking, spear stabbing, natural regeneration, or the Hunger effect; direct modifications such as commands still change hunger, and eating still restores it.
+
+- Type: `boolean`
+- Default: `false`
+- Suggested values: `false`, `true`
+- Categories: `RL`, `FEATURE`
+
 ### enhancedTotemOfUndying
 
 Totems of Undying immediately restore an additional 10 health when triggered.

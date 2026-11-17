@@ -8,6 +8,8 @@
   "carpet.rule.customBlockingKnockbackStrength.desc": "自定义物品格挡近战攻击后对攻击者的击退强度",
   "carpet.rule.deflectableWitherSkulls.name": "可反弹凋灵头",
   "carpet.rule.deflectableWitherSkulls.desc": "玩家可以左键将指定颜色的凋灵头沿瞄准方向打回去",
+  "carpet.rule.disableFoodExhaustion.name": "禁用饱食度消耗",
+  "carpet.rule.disableFoodExhaustion.desc": "玩家不再因疾跑、跳跃、攻击、长矛突刺、自然恢复和饥饿效果消耗饱食度；指令等直接修改仍会改变饱食度，进食仍可正常恢复",
   "carpet.rule.enhancedTotemOfUndying.name": "强化不死图腾",
   "carpet.rule.enhancedTotemOfUndying.desc": "不死图腾触发时立刻额外恢复 10 点生命值",
   "carpet.rule.evokerNeverSummonVex.name": "唤魔者永不召唤恼鬼",
