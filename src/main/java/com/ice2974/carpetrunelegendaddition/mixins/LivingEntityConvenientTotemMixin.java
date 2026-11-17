@@ -43,7 +43,11 @@ abstract class LivingEntityConvenientTotemMixin {
                     target = "Lnet/minecraft/world/entity/LivingEntity;getItemInHand(Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/item/ItemStack;"))
     private ItemStack carpetRuneLegendAddition$useInventoryTotem(LivingEntity entity, InteractionHand hand,
                                                                    Operation<ItemStack> original) {
-        ItemStack held = original.call(hand);
+        // Operation.call 必须回传接收者：这里的目标调用是 this.getItemInHand(hand)，
+        // 与 handler 前置参数一致地传入 (entity, hand)，漏传接收者会在运行期抛
+        // MixinExtras 的 IncorrectArgumentCountException（该调用先于规则判断执行，
+        // 会破坏所有走到濒死图腾检查的实体）。
+        ItemStack held = original.call(entity, hand);
         if (!CarpetRuneLegendSettings.convenientTotemOfUndying
                 || hand != InteractionHand.MAIN_HAND
                 || !(entity instanceof Player player)) {
