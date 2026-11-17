@@ -26,3 +26,4 @@ It mainly adjusts vanilla Minecraft mechanics through the Carpet rule system, ai
 ## Documentation
 
 - [Rules](docs/rules_en.md)
+  - [Disable attack cooldown](docs/rules_en.md#disableattackcooldown): Player melee attacks count as fully charged. Installing the mod on the client also syncs the attack indicator and minimum charge check.

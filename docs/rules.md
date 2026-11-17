@@ -40,6 +40,15 @@
 若世界的 `carpet.conf` 仍使用旧值 `off` 或 `all`，请分别改为 `false` 或 `true`。
 - 分类：`RL`, `FEATURE`, `CLIENT`
 
+### 禁用攻击冷却（disableAttackCooldown）
+
+玩家近战攻击始终按满蓄力判定，包括长矛突刺。
+
+- 类型: `boolean`
+- 默认值: `false`
+- 可选值: `false`, `true`
+- 分类：`RL`, `FEATURE`, `CLIENT`
+
 ### 禁用饱食度消耗（disableFoodExhaustion）
 
 玩家不再因疾跑、跳跃、攻击、长矛突刺、自然恢复和饥饿效果消耗饱食度。

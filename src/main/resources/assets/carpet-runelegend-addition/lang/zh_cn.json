@@ -8,6 +8,8 @@
   "carpet.rule.customBlockingKnockbackStrength.desc": "自定义物品格挡近战攻击后对攻击者的击退强度",
   "carpet.rule.deflectableWitherSkulls.name": "可反弹凋灵头",
   "carpet.rule.deflectableWitherSkulls.desc": "玩家可以左键将指定颜色的凋灵头沿瞄准方向打回去",
+  "carpet.rule.disableAttackCooldown.name": "禁用攻击冷却",
+  "carpet.rule.disableAttackCooldown.desc": "玩家近战攻击始终按满蓄力判定，包括长矛突刺",
   "carpet.rule.disableFoodExhaustion.name": "禁用饱食度消耗",
   "carpet.rule.disableFoodExhaustion.desc": "玩家不再因疾跑、跳跃、攻击、长矛突刺、自然恢复和饥饿效果消耗饱食度",
   "carpet.rule.disableMeleeCriticalHits.name": "禁用玩家近战暴击",

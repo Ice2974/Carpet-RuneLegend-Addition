@@ -22,3 +22,4 @@
 
 ## 文档
 - [规则](docs/rules.md)
+  - [禁用攻击冷却](docs/rules.md#禁用攻击冷却disableattackcooldown)：玩家近战攻击按满蓄力判定；客户端可选装本模组以同步攻击指示器和最低蓄力判定。

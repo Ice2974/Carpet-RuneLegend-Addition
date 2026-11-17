@@ -40,6 +40,15 @@ Players can left-click wither skulls of the selected colors to deflect them in t
 If the world's `carpet.conf` still uses the old value `off` or `all`, replace it with `false` or `true`, respectively.
 - Categories: `RL`, `FEATURE`, `CLIENT`
 
+### disableAttackCooldown
+
+Player melee attacks, including spear stabs, are always treated as fully charged.
+
+- Type: `boolean`
+- Default: `false`
+- Options: `false`, `true`
+- Categories: `RL`, `FEATURE`, `CLIENT`
+
 ### disableFoodExhaustion
 
 Hunger is no longer consumed by sprinting, jumping, attacking, spear stabbing, natural regeneration, or the Hunger effect.

@@ -70,6 +70,9 @@ public final class CarpetRuneLegendSettings {
     @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE})
     public static boolean convenientTotemOfUndying = false;
 
+    @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE, RuleCategory.CLIENT})
+    public static volatile boolean disableAttackCooldown = false;
+
     // 禁用饱食度消耗：规则开启时，所有通过 FoodData#addExhaustion 产生的消耗
     // （疾跑、跳跃、攻击、长矛突刺、受伤、饥饿效果与自然恢复）都不再降低饱食度；
     // 指令、NBT、进食等直接修改不受影响。行为实现见
