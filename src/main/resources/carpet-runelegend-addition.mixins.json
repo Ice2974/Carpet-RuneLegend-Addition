@@ -12,6 +12,7 @@
     "LivingEntityPoisonImmunityMixin",
     "PiercingWeaponWitherSkullDeflectionMixin",
     "PlayerAlwaysSweepAttackMixin",
+    "PlayerDisableMeleeCriticalHitsMixin",
     "PlayerWitherSkullDeflectionMixin",
     "WitchNoHarmingPotionMixin"
   ],

@@ -76,4 +76,7 @@ public final class CarpetRuneLegendSettings {
     // com.ice2974.carpetrunelegendaddition.mixins.FoodDataDisableExhaustionMixin。
     @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE})
     public static boolean disableFoodExhaustion = false;
+
+    @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE})
+    public static boolean disableMeleeCriticalHits = false;
 }

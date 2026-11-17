@@ -49,6 +49,15 @@
 - 可选值: `false`, `true`
 - 分类：`RL`, `FEATURE`
 
+### 禁用玩家近战暴击（disableMeleeCriticalHits）
+
+玩家下落时的近战攻击不会触发暴击。
+
+- 类型: `boolean`
+- 默认值: `false`
+- 可选值: `false`, `true`
+- 分类：`RL`, `FEATURE`
+
 ### 强化不死图腾（enhancedTotemOfUndying）
 
 不死图腾触发时立刻额外恢复 10 点生命值。

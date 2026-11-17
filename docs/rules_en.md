@@ -49,6 +49,15 @@ Hunger is no longer consumed by sprinting, jumping, attacking, spear stabbing, n
 - Suggested values: `false`, `true`
 - Categories: `RL`, `FEATURE`
 
+### disableMeleeCriticalHits
+
+Prevents players from dealing melee critical hits while falling.
+
+- Type: `boolean`
+- Default: `false`
+- Options: `false`, `true`
+- Categories: `RL`, `FEATURE`
+
 ### enhancedTotemOfUndying
 
 Totems of Undying immediately restore an additional 10 health when triggered.
