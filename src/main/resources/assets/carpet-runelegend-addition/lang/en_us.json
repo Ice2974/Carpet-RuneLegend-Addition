@@ -4,7 +4,7 @@
   "carpet.rule.convenientTotemOfUndying.desc": "Totems of Undying can trigger their protection from any slot of a player's inventory, excluding items stored inside shulker boxes or ender chests",
   "carpet.rule.customBlockingKnockbackStrength.desc": "Custom knockback strength applied to the attacker after an item blocks a melee attack",
   "carpet.rule.deflectableWitherSkulls.desc": "Players can left-click wither skulls of the selected colors to deflect them in the direction they are aiming",
-  "carpet.rule.disableFoodExhaustion.desc": "Hunger is no longer consumed by sprinting, jumping, attacking, spear stabbing, natural regeneration, or the Hunger effect; direct modifications such as commands still change hunger, and eating still restores it",
+  "carpet.rule.disableFoodExhaustion.desc": "Hunger is no longer consumed by sprinting, jumping, attacking, spear stabbing, natural regeneration, or the Hunger effect",
   "carpet.rule.disableMeleeCriticalHits.desc": "Prevents players from dealing melee critical hits while falling",
   "carpet.rule.enhancedTotemOfUndying.desc": "Totems of Undying immediately restore an additional 10 health when triggered",
   "carpet.rule.evokerNeverSummonVex.desc": "Evokers will no longer attempt to summon vexes",

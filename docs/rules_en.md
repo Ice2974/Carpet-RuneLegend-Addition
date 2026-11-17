@@ -42,7 +42,7 @@ If the world's `carpet.conf` still uses the old value `off` or `all`, replace it
 
 ### disableFoodExhaustion
 
-Hunger is no longer consumed by sprinting, jumping, attacking, spear stabbing, natural regeneration, or the Hunger effect; direct modifications such as commands still change hunger, and eating still restores it.
+Hunger is no longer consumed by sprinting, jumping, attacking, spear stabbing, natural regeneration, or the Hunger effect.
 
 - Type: `boolean`
 - Default: `false`
