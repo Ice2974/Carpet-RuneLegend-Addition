@@ -1,6 +1,8 @@
 package com.ice2974.carpetrunelegendaddition.mixins;
 
 import com.ice2974.carpetrunelegendaddition.settings.CarpetRuneLegendSettings;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
@@ -10,7 +12,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
 
 /**
  * 便捷不死图腾：规则开启时，玩家的不死图腾即使不在主手或副手，只要位于背包的任意顶层栏位，
@@ -19,11 +20,15 @@ import org.spongepowered.asm.mixin.injection.Redirect;
  * <p>26.3 的 {@code LivingEntity#checkTotemDeathProtection} 依次检查主手与副手：
  * 通过 {@code getItemInHand(hand)} 取出物品，若带有
  * {@code DataComponents.DEATH_PROTECTION} 组件，则复制该物品、消耗 1 个，并在随后
- * 处理统计、进度、振动、生命值设为 1 点、死亡保护效果与实体事件 35。这里重定向该方法内
+ * 处理统计、进度、振动、生命值设为 1 点、死亡保护效果与实体事件 35。这里包装该方法内
  * 唯一的 {@code getItemInHand} 调用：主手没有死亡保护物品时，先保持原版“副手优先”，
  * 再按槽位顺序查找玩家 {@link Inventory} 顶层栏位中带死亡保护组件的不死图腾，并把真实
  * 物品栈交给原版。后续复制、消耗与效果完全沿用原版逻辑，因此与
  * {@code stackableTotemOfUndying} 等规则兼容，堆叠图腾也只消耗 1 个。
+ *
+ * <p>使用 MixinExtras {@code @WrapOperation} 而非 {@code @Redirect}：包装式注入允许多个模组
+ * 依次包装同一调用点（本包装在需要时才调用原始实现），避免与其他修改死亡保护逻辑的模组
+ * 发生 {@code @Redirect} 的排他性冲突。
  *
  * <p>只遍历 {@code Inventory} 的顶层槽位，不读取潜影盒等物品的 {@code CONTAINER}
  * 组件，也不访问末影箱容器，因此背包内潜影盒与末影箱中的物品不会触发。规则关闭、
@@ -31,13 +36,14 @@ import org.spongepowered.asm.mixin.injection.Redirect;
  */
 @Mixin(LivingEntity.class)
 abstract class LivingEntityConvenientTotemMixin {
-    @Redirect(
+    @WrapOperation(
             method = "checkTotemDeathProtection(Lnet/minecraft/world/damagesource/DamageSource;)Z",
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/world/entity/LivingEntity;getItemInHand(Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/item/ItemStack;"))
-    private ItemStack carpetRuneLegendAddition$useInventoryTotem(LivingEntity entity, InteractionHand hand) {
-        ItemStack held = entity.getItemInHand(hand);
+    private ItemStack carpetRuneLegendAddition$useInventoryTotem(LivingEntity entity, InteractionHand hand,
+                                                                   Operation<ItemStack> original) {
+        ItemStack held = original.call(hand);
         if (!CarpetRuneLegendSettings.convenientTotemOfUndying
                 || hand != InteractionHand.MAIN_HAND
                 || !(entity instanceof Player player)) {
