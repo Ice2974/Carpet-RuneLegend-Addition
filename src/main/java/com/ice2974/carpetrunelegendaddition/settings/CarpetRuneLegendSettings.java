@@ -53,10 +53,11 @@ public final class CarpetRuneLegendSettings {
     public static boolean undeadNotImmuneToPoison = false;
 
     // 可堆叠不死图腾：规则开启时不死图腾最大堆叠数为 64，关闭时恢复原版 1；
+    // 带 CLIENT 分类同步到客户端，使安装了本模组的客户端背包堆叠预测与服务端一致；
     // 行为实现见
     // com.ice2974.carpetrunelegendaddition.mixins.ItemStackTotemStackSizeMixin。
-    @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE})
-    public static boolean stackableTotemOfUndying = false;
+    @Rule(categories = {RUNELEGEND, RuleCategory.FEATURE, RuleCategory.CLIENT})
+    public static volatile boolean stackableTotemOfUndying = false;
 
     // 强化不死图腾：不死图腾触发后，在原版将生命值设为 1 点的基础上额外恢复 10 点生命值；
     // 20 点生命上限的玩家最终为 11 点，恢复量不超过最大生命值；行为实现见

@@ -92,7 +92,7 @@ Allows totems of undying to stack up to 64.
 - Type: `boolean`
 - Default: `false`
 - Suggested values: `false`, `true`
-- Categories: `RL`, `FEATURE`
+- Categories: `RL`, `FEATURE`, `CLIENT`
 
 ### undeadNotImmuneToPoison
 

@@ -92,7 +92,7 @@
 - 类型: `boolean`
 - 默认值: `false`
 - 可选值: `false`, `true`
-- 分类：`RL`, `FEATURE`
+- 分类：`RL`, `FEATURE`, `CLIENT`
 
 ### 亡灵生物不免疫中毒（undeadNotImmuneToPoison）
 
