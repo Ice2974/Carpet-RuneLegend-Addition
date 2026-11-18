@@ -77,6 +77,7 @@
 - 规则分类使用本模组常量 `RUNELEGEND`（值 `RuneLegend`）与 `carpet.api.settings.RuleCategory.FEATURE` 组合；不要为了方便直接写魔法字符串，也不要把两个独立分类合并成一个字符串。
 - 只有任务明确要求时才新增规则；新增规则不得实现未声明的行为。占位规则只允许“注册但不读取”，不得在其他代码中读取并执行行为。
 - 不要在 `onGameStarted()` 之外的时机解析规则类，也不要重复解析同一规则类。
+- 非必要不使用 `@Redirect`。包装原调用优先使用 `@WrapOperation` 并通过 `original.call(...)` 继续调用链；只调整调用结果时优先使用 `@ModifyExpressionValue`，只决定是否执行 `void` 调用时优先使用 `@WrapWithCondition`。仅在其他注入方式无法满足所需语义时使用 `@Redirect`，并在代码中说明原因。
 
 ## 规则 / 命令 修改
 
