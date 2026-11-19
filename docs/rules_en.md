@@ -69,7 +69,7 @@ Prevents players from dealing melee critical hits while falling.
 
 ### enhancedTotemOfUndying
 
-Totems of Undying immediately restore an additional 10 health when triggered.
+Totems of Undying immediately restore an additional 10 health and grant Resistance I for 30 seconds when triggered.
 
 - Type: `boolean`
 - Default: `false`

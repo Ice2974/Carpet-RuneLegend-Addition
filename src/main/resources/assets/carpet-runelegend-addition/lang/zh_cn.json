@@ -15,7 +15,7 @@
   "carpet.rule.disableMeleeCriticalHits.name": "禁用玩家近战暴击",
   "carpet.rule.disableMeleeCriticalHits.desc": "玩家下落时的近战攻击不会触发暴击",
   "carpet.rule.enhancedTotemOfUndying.name": "强化不死图腾",
-  "carpet.rule.enhancedTotemOfUndying.desc": "不死图腾触发时立刻额外恢复 10 点生命值",
+  "carpet.rule.enhancedTotemOfUndying.desc": "不死图腾触发时立刻额外恢复 10 点生命值，并赋予 30 秒抗性提升 I",
   "carpet.rule.evokerNeverSummonVex.name": "唤魔者永不召唤恼鬼",
   "carpet.rule.evokerNeverSummonVex.desc": "唤魔者不会再尝试召唤恼鬼",
   "carpet.rule.stackableTotemOfUndying.name": "可堆叠不死图腾",

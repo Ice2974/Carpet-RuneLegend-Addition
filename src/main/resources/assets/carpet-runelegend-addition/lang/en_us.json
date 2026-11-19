@@ -7,7 +7,7 @@
   "carpet.rule.disableAttackCooldown.desc": "Player melee attacks, including spear stabs, are always treated as fully charged",
   "carpet.rule.disableFoodExhaustion.desc": "Hunger is no longer consumed by sprinting, jumping, attacking, spear stabbing, natural regeneration, or the Hunger effect",
   "carpet.rule.disableMeleeCriticalHits.desc": "Prevents players from dealing melee critical hits while falling",
-  "carpet.rule.enhancedTotemOfUndying.desc": "Totems of Undying immediately restore an additional 10 health when triggered",
+  "carpet.rule.enhancedTotemOfUndying.desc": "Totems of Undying immediately restore an additional 10 health and grant Resistance I for 30 seconds when triggered",
   "carpet.rule.evokerNeverSummonVex.desc": "Evokers will no longer attempt to summon vexes",
   "carpet.rule.stackableTotemOfUndying.desc": "Allows totems of undying to stack up to 64",
   "carpet.rule.undeadNotImmuneToPoison.desc": "Undead mobs are no longer immune to poison effects and will take normal poison damage",
